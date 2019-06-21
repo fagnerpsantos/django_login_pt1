@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de usuários</title>
+</head>
+<body>
+
+<form method="post">
+    {% csrf_token %}
+
+    <div class="form-group">
+        {{form_usuario.username.errors}}
+        <label>Username: </label>
+        {{form_usuario.username}}
+    </div>
+
+    <div class="form-group">
+        {{form_usuario.password1.errors}}
+        <label>Senha: </label>
+        {{form_usuario.password1}}
+    </div>
+
+    <div class="form-group">
+        {{form_usuario.password2.errors}}
+        <label>Confirmação de senha: </label>
+        {{form_usuario.password2}}
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Cadastrar" class="btn btn-primary">
+    </div>
+</form>
+
+</body>
+</html>
